@@ -604,3 +604,39 @@ body {
         opacity: 1;
     }
 }
+
+/* For mobile devices */
+@media (max-width: 768px) {
+    .container {
+      padding: 1rem;
+    }
+  }
+  
+  /* For tablets */
+  @media (min-width: 769px) and (max-width: 1024px) {
+    .container {
+      padding: 1.5rem;
+    }
+  }
+  
+  /* For larger devices */
+  @media (min-width: 1025px) {
+    .container {
+      padding: 2rem;
+    }
+  }
+  .flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .flex-item {
+    flex: 1 1 100%; /* Full width on mobile */
+  }
+  
+  @media (min-width: 768px) {
+    .flex-item {
+      flex: 1 1 45%; /* 45% width on larger screens */
+    }
+  }
