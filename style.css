@@ -214,6 +214,21 @@ body {
     margin-bottom: 4rem;
 }
 
+.row img, .intern-row img, .node-row img {
+    margin-bottom: 20px;
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+}
+
+.row img:hover, .intern-row img:hover, .node-row img:hover {
+    transform: scale(1.1);
+}
+
 .education{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -606,37 +621,115 @@ body {
 }
 
 /* For mobile devices */
-@media (max-width: 768px) {
+@media (min-width: 360px) and (max-width: 414px) {
     .container {
       padding: 1rem;
     }
   }
   
-  /* For tablets */
-  @media (min-width: 769px) and (max-width: 1024px) {
+/* For tablets */
+@media (min-width: 601px) and (max-width: 1280px) {
     .container {
       padding: 1.5rem;
     }
-  }
+}
   
-  /* For larger devices */
-  @media (min-width: 1025px) {
+/* For larger devices */
+@media (min-width: 1280px) and (max-width: 1920px) {
     .container {
       padding: 2rem;
     }
-  }
-  .flex-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
-  
-  .flex-item {
-    flex: 1 1 100%; /* Full width on mobile */
-  }
-  
-  @media (min-width: 768px) {
-    .flex-item {
-      flex: 1 1 45%; /* 45% width on larger screens */
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .home {
+        flex-direction: column;
+        padding: 50px 5%;
     }
-  }
+
+    .home-content {
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .about {
+        flex-direction: column;
+        padding: 20px 5%;
+    }
+
+    .about-img, .about-text {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        padding: 15px 5%;
+    }
+
+    .logo {
+        font-size: 20px;
+    }
+
+    .navBar a {
+        font-size: 16px;
+    }
+
+    .home-content h1 {
+        font-size: 40px;
+    }
+
+    .about-text h2 {
+        font-size: 36px;
+    }
+}
+
+/* General Fixes for Education and Experience Sections */
+.education, .experience {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    gap: 1.5rem;
+    padding: 20px;
+}
+
+/* Ensure images in both sections are responsive */
+.edu-img img, .exp-img img {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto;
+}
+
+/* Fix for text not merging with images */
+.edu-txt, .exp-txt {
+    padding: 20px;
+    text-align: left;
+}
+
+/* Media Query for smaller devices to stack image and text */
+@media (max-width: 768px) {
+    .education, .experience {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .edu-img img, .exp-img img {
+        max-width: 70%; /* Make images smaller on small screens */
+        margin-bottom: 20px;
+    }
+
+    .edu-txt, .exp-txt {
+        padding: 10px;
+    }
+}
+
+/* Larger screens styling for more space */
+@media (min-width: 1024px) {
+    .edu-img img, .exp-img img {
+        max-width: 400px;
+    } 
+}
